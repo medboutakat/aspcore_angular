@@ -1,5 +1,5 @@
  
-    export interface InvoiceDetail {
+    export class InvoiceDetail {
         id: string;
         pCode: string;
         pname: string;
@@ -8,7 +8,7 @@
         invoiceHeaderID:string;
     }
 
-    export interface InvoiceHeader { 
+    export class InvoiceHeader { 
         id:string;
         code: string;
         date: Date;

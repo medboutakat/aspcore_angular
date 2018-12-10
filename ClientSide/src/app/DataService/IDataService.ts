@@ -28,7 +28,7 @@ export class  IDataService<T> {
 
 
   
-  AddEmployee(emp: T) {
+  AddObject(emp: T) {
     const headers = new HttpHeaders().set('content-type', 'application/json');
   
     // var body = {
@@ -39,14 +39,13 @@ export class  IDataService<T> {
       if (this.newemployee.hasOwnProperty(name)) {
         body[name]= this.newemployee[name];
       } 
-    }
-    
+    } 
     console.log(ROOT_URL);
-    return this.http.post<Employee>(ROOT_URL + 'Employees/', body, { headers })
+    return this.http.post<T>(ROOT_URL + 'InvoiceHeaders/', body, { headers })
   }
 
   ///
-  EditEmployee(emp: T,fields:[]) {
+  EditEmployee(emp: T) {
     console.log(emp);
     
     const params = new HttpParams().set('ID', emp['id']);

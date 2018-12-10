@@ -87,7 +87,8 @@
               "src/styles.sass"
             ],
             "scripts": [
-               "node_modules/marked/lib/marked.js"   
+               "node_modules/marked/lib/marked.js",
+                "../node_modules/jquery/dist/jquery.min.js"
             ],
             "assets": [
               "src/favicon.ico",

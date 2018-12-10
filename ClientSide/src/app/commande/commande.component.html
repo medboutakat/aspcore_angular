@@ -10,16 +10,16 @@
     <thead>
       <tr>
         <th scope="col">Sr.No</th>
-        <th scope="col">Value</th>
-        <th scope="col">Display Name</th> 
+        <th scope="col">Code</th>
+        <th scope="col">Date</th> 
         <th scope="col" style="align-content: center">Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let e of objlist let i = index ">
         <td scope="col">{{i+1}}</td>
-        <!-- <td scope="col">{{e.displayName}}</td>
-        <td scope="col">{{e.value}}</td>  -->
+        <td scope="col">{{e.code}}</td>
+        <td scope="col">{{e.date}}</td> 
         <td style="display:none">{{e.id}}</td>
         <td scope="col">
           <button type="button" class="btn btn-default btn-primary" (click)="loadnewForm(e.id,e.displayName,e.value)"
@@ -45,7 +45,7 @@
           <h4 class="modal-primary">{{action}}</h4>
         </div>
         <div class="modal-body"> 
-        <app-vat-edit #editvat (nameEvent)="RefreshData($event)"></app-vat-edit>
+        <app-commande-edit #editcomponent (nameEvent)="RefreshData($event)"></app-commande-edit>
   
         <!-- <app-employeeupdate (nameEvent)="RefreshData($event)" 
           [isReset]="resetForm" #regForm></app-employeeupdate> -->
@@ -61,5 +61,3 @@
       </div>
     </div>
   </div>
-
-   

@@ -4,6 +4,7 @@ import { InvoiceHeader, InvoiceDetail } from 'src/Models/Commande';
 import { Router } from '@angular/router'; 
 import { IDataService } from '../DataService/IDataService';
 import { Observable } from 'rxjs';
+import { CommandeEditComponent } from '../commande-edit/commande-edit.component';
 
 @Component({
   selector: 'app-vat',
@@ -23,9 +24,18 @@ export class CommandeComponent implements OnInit {
       
     }
   
-    ngOnInit() {
+    getName() :String{
+      return ((<any>this).constructor.name).replace("Component","").toLowerCase(); 
+    } 
+    getNameEdit() {
+      return typeof(this); 
+    } 
+
+    @ViewChild('editcomponent') editcomponent;
+
+    ngOnInit() { 
+      this.editcomponent=this.getNameEdit();
       this.LoadData();
-  
     }
   
     LoadData() { 
@@ -38,12 +48,11 @@ export class CommandeComponent implements OnInit {
         else {
           this.dataavailbale = false;
         }
-      }
-      )
-        , err => {
+      }), err => {
           console.log(err);
         }
-    }
+     
+      }
     deleteconfirmation(id: string) {
   
       // if (confirm("Are you sure you want to delete this ?")) {
@@ -56,32 +65,27 @@ export class CommandeComponent implements OnInit {
       // }
     }
 
-
-    // @ViewChild('empadd') addcomponent: VatAddComponent
-
-      // @ViewChild('editvat') editcomponent: VatEditComponent
+ 
   
+    loadAddnew() {
+      this.action="add vat";
+      this.editcomponent.objemp.code = ""
+      this.editcomponent.objemp.value = "" 
+      this.editcomponent.objemp.id = "" 
+      this.editcomponent.IsNew=true;
+    }
   
+    loadnewForm(id: string, code: string, date: string) {
+      this.editcomponent.IsNew=false;
+      this.action="Edit vat : "+code;
+      console.log(code);
+      this.editcomponent.objemp.code = code
+      this.editcomponent.objemp.date = date 
+      this.editcomponent.objemp.id = id  
+    }
   
-    // loadAddnew() {
-    //   this.action="add vat";
-    //   this.editcomponent.objemp.displayname = ""
-    //   this.editcomponent.objemp.value = "" 
-    //   this.editcomponent.objemp.id = "" 
-    //   this.editcomponent.IsNew=true;
-    // }
-  
-    // loadnewForm(id: string, displayname: string, value: string) {
-    //   this.editcomponent.IsNew=false;
-    //   this.action="Edit vat : "+displayname;
-    //   console.log(displayname);
-    //   this.editcomponent.objemp.displayname = displayname
-    //   this.editcomponent.objemp.value = value 
-    //   this.editcomponent.objemp.id = id  
-    // }
-  
-    // RefreshData() {
-    //   this.LoadData();
-    // }
+    RefreshData() {
+      this.LoadData();
+    }
   
 }

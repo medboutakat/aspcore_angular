@@ -22,6 +22,7 @@ import { SignupComponent } from './signup/signup.component';
 import { RoutegaurdService } from './routegaurd.service';
 import { CommandeComponent } from './commande/commande.component';
 import { IDataService } from './DataService/IDataService';
+import { CommandeEditComponent } from './commande-edit/commande-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { IDataService } from './DataService/IDataService';
     LoginComponent,
     SignupComponent,
     CommandeComponent,
+    CommandeEditComponent,
   ],
   imports: [
     BrowserModule,

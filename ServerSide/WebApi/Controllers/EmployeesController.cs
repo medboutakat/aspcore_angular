@@ -27,7 +27,7 @@ namespace WebApi.Controllers
         [HttpGet]
         public IEnumerable<Employee> GetEmployees()
         { 
-           return _context.Employees;
+           return  _context.Employees;
         }
 
         // GET: api/Employees/5

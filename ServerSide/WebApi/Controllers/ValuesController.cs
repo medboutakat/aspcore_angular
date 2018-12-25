@@ -10,11 +10,15 @@ namespace WebApi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET api/values
+
+
+       private string[] arrayAnnas={ "value1", "value2" };
+
+        // GET api/values 
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return arrayAnnas;
         }
 
         // GET api/values/5

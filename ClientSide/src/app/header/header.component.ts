@@ -23,9 +23,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     /* Parallax Effects */
     (<any>$)(window).on('load', function () {
-  if (!!(<any>$).prototype.enllax) {
-    (<any>$)(window).enllax();
-  }});
+    if (!!(<any>$).prototype.enllax) {
+      (<any>$)(window).enllax();
+    }});
   }
 
   getHeader() {

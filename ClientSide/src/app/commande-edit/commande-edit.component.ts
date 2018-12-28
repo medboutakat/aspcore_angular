@@ -23,28 +23,30 @@ export class CommandeEditComponent implements OnInit {
   }
 
   @Input() reset: boolean = false;
-  @ViewChild('editcomponent') myForm: NgForm;
+  @ViewChild('editview') myForm: NgForm;
   @Input() isReset: boolean = false;
   @Input() IsNew: boolean = false;
 
   
-  objtempemp: InvoiceHeader;
+  objView: InvoiceHeader;
   @Input() objemp: InvoiceHeader = new InvoiceHeader();
 
   EditMainObject(regForm: NgForm) {
+ 
+    alert("Opration "+this.IsNew);
+
     if(!this.IsNew){
       this.dataservice.EditEmployee(this.objemp).subscribe(res => {
         alert("Employee updated successfully");
         this.nameEvent.emit("ccc");
         this.cb.nativeElement.click(); 
       });
-    }else{
-         
-        this.objtempemp=new InvoiceHeader();
-        this.objtempemp.code=regForm.value.code;
-        this.objtempemp.date=regForm.value.date;   
+    }else{ 
+        this.objView=new InvoiceHeader();
+        this.objView.code=regForm.value.code;
+        this.objView.date=regForm.value.date;   
 
-        this.dataservice.AddObject(this.objtempemp).subscribe(res=>{
+        this.dataservice.AddObject(this.objView).subscribe(res=>{
           alert("Vat Added successfully");
             this.TakeHome();
           }
@@ -58,7 +60,6 @@ export class CommandeEditComponent implements OnInit {
     this.cb.nativeElement.click();
     this.route.navigateByUrl('commande');
   }
-
 
 }
 

@@ -31,10 +31,10 @@ export class CommandeComponent implements OnInit {
       return typeof(this); 
     } 
 
-    @ViewChild('editcomponent') editcomponent;
+    @ViewChild('editview') editview:CommandeEditComponent;
 
     ngOnInit() { 
-      this.editcomponent=this.getNameEdit();
+      // this.editcomponent=this.getNameEdit();
       this.LoadData();
     }
   
@@ -55,33 +55,33 @@ export class CommandeComponent implements OnInit {
       }
     deleteconfirmation(id: string) {
   
-      // if (confirm("Are you sure you want to delete this ?")) {
-      //   this.tempemp = new Vat();
-      //   this.tempemp.id = id;
-      //   this.dataservce.DeleteVat(this.tempemp).subscribe(res => {
-      //     alert("Deleted successfully !!!");
-      //     this.LoadData();
-      //   })
-      // }
+      if (confirm("Are you sure you want to delete this ?")) {
+        this.tempemp = new InvoiceHeader();
+        this.tempemp.id = id;
+        this.dataserv.DeleteObject(this.tempemp).subscribe(res => {
+          alert("Deleted successfully !!!");
+          this.LoadData();
+        })
+      }
     }
 
  
   
     loadAddnew() {
-      this.action="add vat";
-      this.editcomponent.objemp.code = ""
-      this.editcomponent.objemp.value = "" 
-      this.editcomponent.objemp.id = "" 
-      this.editcomponent.IsNew=true;
+      this.action="Nouvelle commande"; 
+      this.editview.objView.code = ""
+      this.editview.objView.date = new Date();
+      this.editview.objView.id = "" 
+      this.editview.IsNew=true;
     }
   
-    loadnewForm(id: string, code: string, date: string) {
-      this.editcomponent.IsNew=false;
-      this.action="Edit vat : "+code;
+    loadnewForm(id: string, code: string, date: Date) {
+      this.editview.IsNew=false;
+      this.action="Commande : "+code;
       console.log(code);
-      this.editcomponent.objemp.code = code
-      this.editcomponent.objemp.date = date 
-      this.editcomponent.objemp.id = id  
+      this.editview.objView.code = code
+      this.editview.objView.date = date 
+      this.editview.objView.id = id  
     }
   
     RefreshData() {

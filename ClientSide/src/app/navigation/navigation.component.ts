@@ -64,7 +64,7 @@ export class NavigationComponent implements OnInit, AfterContentChecked {
 
   getUser() {
     this.user = JSON.parse(localStorage.getItem('currentUser'));
-
+    this.user=null;
     if (this.user) {
       this.profileImage = this.user.image;
     } else {

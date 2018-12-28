@@ -8,6 +8,9 @@ import { VatComponent } from './vat/vat.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CommandeComponent } from './commande/commande.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { FooterComponent } from './footer/footer.component';
+import { SocialComponent } from './social/social.component';
 
 const routes: Routes = [
 
@@ -20,7 +23,6 @@ const routes: Routes = [
   {path:'Home',component:EmployeesComponent}, 
   {path:'tva',component:VatComponent},
   {path:'commande',component:CommandeComponent},
-
   
   // {path:'Edit',component:EmployeeupdateComponent},
   // {path:'Add',component:EmployeeAddComponent},

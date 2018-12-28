@@ -25,7 +25,7 @@ namespace WebApi.Controllers
 
         // GET: api/Vats
         [HttpGet]
-        public IEnumerable<InvoiceHeader> GetVats()
+        public IEnumerable<Vat> GetVats()
         { 
            return _context.Vats;
         }
@@ -51,7 +51,7 @@ namespace WebApi.Controllers
 
         // PUT: api/Vats/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutVat([FromRoute] int id, [FromBody] InvoiceHeader Vat)
+        public async Task<IActionResult> PutVat([FromRoute] int id, [FromBody] Vat Vat)
         {
             if (!ModelState.IsValid)
             {
@@ -71,7 +71,7 @@ namespace WebApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!InvoiceHeaderExists(id))
+                if (!VatExists(id))
                 {
                     return NotFound();
                 }
@@ -84,9 +84,9 @@ namespace WebApi.Controllers
             return NoContent();
         }
 
-        // POST: api/InvoiceHeaders
+        // POST: api/Vats
         [HttpPost]
-        public async Task<IActionResult> PostVat([FromBody] InvoiceHeader Vat)
+        public async Task<IActionResult> PostVat([FromBody] Vat Vat)
         {
 
 
@@ -95,13 +95,13 @@ namespace WebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.InvoiceHeaders.Add(Vat);
+            _context.Vats.Add(Vat);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetInvoiceHeaders", new { id = Vat.ID }, Vat);
+            return CreatedAtAction("GetVats", new { id = Vat.ID }, Vat);
         }
 
-        // DELETE: api/InvoiceHeaders/5
+        // DELETE: api/Vats/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteVat([FromRoute] int id)
         {
@@ -116,7 +116,7 @@ namespace WebApi.Controllers
                 return NotFound();
             }
 
-            _context.InvoiceHeaders.Remove(Vat);
+            _context.Vats.Remove(Vat);
             await _context.SaveChangesAsync();
 
             return Ok(Vat);

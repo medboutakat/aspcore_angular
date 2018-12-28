@@ -64,7 +64,7 @@ export class  IDataService<T> {
     return this.http.put<T>(ROOT_URL + 'Employees/' + emp['id'], body, { headers, params })
 
   }
-  DeleteEmployee(emp: T) {
+  DeleteObject(emp: T) {
     const params = new HttpParams().set('ID', emp['id']);
     const headers = new HttpHeaders().set('content-type', 'application/json');
     var body = {

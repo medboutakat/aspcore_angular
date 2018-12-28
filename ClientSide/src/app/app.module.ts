@@ -23,6 +23,19 @@ import { RoutegaurdService } from './routegaurd.service';
 import { CommandeComponent } from './commande/commande.component';
 import { IDataService } from './DataService/IDataService';
 import { CommandeEditComponent } from './commande-edit/commande-edit.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { FooterComponent } from './footer/footer.component';
+import { SocialComponent } from './social/social.component';
+import { HeaderComponent } from './header/header.component';
+import { ClientsComponent } from './clients/clients.component';
+import { TestimonialComponent } from './testimonial/testimonial.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard/user-dashboard.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
+import { ConfigService } from './config.service';
+import { NavmenuComponent } from './navmenu/navmenu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +51,16 @@ import { CommandeEditComponent } from './commande-edit/commande-edit.component';
     SignupComponent,
     CommandeComponent,
     CommandeEditComponent,
+    ContactusComponent,
+    FooterComponent ,
+    SocialComponent,
+    HeaderComponent,
+    ClientsComponent,
+    TestimonialComponent,
+    PricingComponent,
+    NotfoundComponent, 
+    NavigationComponent,
+    NavmenuComponent
   ],
   imports: [
     BrowserModule,
@@ -51,8 +74,8 @@ import { CommandeEditComponent } from './commande-edit/commande-edit.component';
     VatDataService,
     AuthenticationService,
     IDataService,
-    RoutegaurdService,
-    
+    RoutegaurdService,  
+    ConfigService,
 ],
   bootstrap: [AppComponent]
 })

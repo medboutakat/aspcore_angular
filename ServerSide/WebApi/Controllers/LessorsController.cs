@@ -14,56 +14,56 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [DisableCors]
-    public class EmployeesController : ControllerBase
+    public class LessorsController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public EmployeesController(AppDbContext context)
+        public LessorsController(AppDbContext context)
         {
-            _context = context; 
+            _context = context;
         }
 
-        // GET: api/Employees
+        // GET: api/Lessors
         [HttpGet]
-        public IEnumerable<Employee> GetEmployees()
+        public IEnumerable<Lessor> GetLessors()
         { 
-           return  _context.Employees;
+           return _context.Lessors;
         }
 
-        // GET: api/Employees/5
+        // GET: api/Lessors/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetEmployee([FromRoute] int id)
+        public async Task<IActionResult> GetLessor([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var employee = await _context.Employees.FindAsync(id);
+            var Lessor = await _context.Lessors.FindAsync(id);
 
-            if (employee == null)
+            if (Lessor == null)
             {
                 return NotFound();
             }
 
-            return Ok(employee);
+            return Ok(Lessor);
         }
 
-        // PUT: api/Employees/5
+        // PUT: api/Lessors/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEmployee([FromRoute] int id, [FromBody] Employee employee)
+        public async Task<IActionResult> PutLessor([FromRoute] int id, [FromBody] Lessor Lessor)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != employee.ID)
+            if (id != Lessor.ID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(employee).State = EntityState.Modified;
+            _context.Entry(Lessor).State = EntityState.Modified;
 
             try
             {
@@ -71,7 +71,7 @@ namespace WebApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EmployeeExists(id))
+                if (!Exists(id))
                 {
                     return NotFound();
                 }
@@ -84,9 +84,9 @@ namespace WebApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Employees
+        // POST: api/Lessors
         [HttpPost]
-        public async Task<IActionResult> PostEmployee([FromBody] Employee employee)
+        public async Task<IActionResult> PostLessor([FromBody] Lessor Lessor)
         {
 
 
@@ -95,36 +95,36 @@ namespace WebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.Employees.Add(employee);
+            _context.Lessors.Add(Lessor);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetEmployee", new { id = employee.ID }, employee);
+            return CreatedAtAction("GetLessors", new { id = Lessor.ID }, Lessor);
         }
 
-        // DELETE: api/Employees/5
+        // DELETE: api/Lessors/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteEmployee([FromRoute] int id)
+        public async Task<IActionResult> DeleteLessor([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var employee = await _context.Employees.FindAsync(id);
-            if (employee == null)
+            var Lessor = await _context.Lessors.FindAsync(id);
+            if (Lessor == null)
             {
                 return NotFound();
             }
 
-            _context.Employees.Remove(employee);
+            _context.Lessors.Remove(Lessor);
             await _context.SaveChangesAsync();
 
-            return Ok(employee);
+            return Ok(Lessor);
         }
 
-        private bool EmployeeExists(int id)
+        private bool  Exists(int id)
         {
-            return _context.Employees.Any(e => e.ID == id);
+            return _context.Lessors.Any(e => e.ID == id);
         }
     }
 }

@@ -21,9 +21,26 @@ namespace WebApi.Models
         public DbSet<InvoiceHeader> InvoiceHeaders { get; set; }
         public DbSet<InvoiceDetail> InvoiceDetails { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Setting> Settings { get; set; } 
+        public DbSet<Bank> Banks { get; set; }
+        public DbSet<Lessor> Lessors { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Contract> Contract { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductCategorie> ProductCategories { get; set; }
+        public DbSet<Statut> Statuts { get; set; }
+           
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+//dotnet ef migrations add settingtable
+//dotnet ef  database update
+
+
+            // modelBuilder.Entity<AppVersion>().HasData(
+            //     new AppVersion(){ No="23333",Date=new DateTime(2018, 3, 5),Remark="new verssion version app added"  }
+            // );
             // modelBuilder.Entity<Employee>().HasData(
             //    new Employee() { Fname = "Mangesh", Lname = "G", email = "Mangesh.g@outlook.com", gender = "1" },
             //    new Employee() { Fname = "Ramnath", Lname = "Bodke", email = "Ramnagh.g@outlook.com", gender = "1" },

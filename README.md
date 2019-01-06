@@ -2,5 +2,6 @@
 
 salam asp core demo with angular 7 
 
-Mohamed boutakat
+Mohamed BOUTAKAT
+Ghizlane NEJJAR
 

@@ -23,9 +23,10 @@ namespace WebApi.Models
         public DbSet<User> Users { get; set; }
         public DbSet<Setting> Settings { get; set; } 
         public DbSet<Bank> Banks { get; set; }
+         public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<Lessor> Lessors { get; set; }
         public DbSet<Client> Clients { get; set; }
-        public DbSet<Contract> Contract { get; set; }
+        public DbSet<Contract> Contracts { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategorie> ProductCategories { get; set; }

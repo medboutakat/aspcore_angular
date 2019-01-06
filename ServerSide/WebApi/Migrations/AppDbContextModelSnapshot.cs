@@ -56,7 +56,7 @@ namespace WebApi.Migrations
 
                     b.HasIndex("BankID");
 
-                    b.ToTable("BankAccount");
+                    b.ToTable("BankAccounts");
                 });
 
             modelBuilder.Entity("WebApi.Models.Client", b =>
@@ -116,7 +116,7 @@ namespace WebApi.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("Contract");
+                    b.ToTable("Contracts");
                 });
 
             modelBuilder.Entity("WebApi.Models.Employee", b =>

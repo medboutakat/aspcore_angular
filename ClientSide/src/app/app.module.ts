@@ -36,6 +36,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 import { ConfigService } from './config.service';
 import { NavmenuComponent } from './navmenu/navmenu.component';
+import { BankComponent } from './bank/bank.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,11 +57,13 @@ import { NavmenuComponent } from './navmenu/navmenu.component';
     SocialComponent,
     HeaderComponent,
     ClientsComponent,
+    BankComponent,
     TestimonialComponent,
     PricingComponent,
     NotfoundComponent, 
     NavigationComponent,
-    NavmenuComponent
+    NavmenuComponent,
+    BankComponent
   ],
   imports: [
     BrowserModule,

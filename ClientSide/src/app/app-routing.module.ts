@@ -11,10 +11,10 @@ import { CommandeComponent } from './commande/commande.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { FooterComponent } from './footer/footer.component';
 import { SocialComponent } from './social/social.component';
+import { BankComponent } from './bank/bank.component';
 
 const routes: Routes = [
 
- 
   {path:'',component:EmployeesComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
@@ -23,6 +23,7 @@ const routes: Routes = [
   {path:'Home',component:EmployeesComponent}, 
   {path:'tva',component:VatComponent},
   {path:'commande',component:CommandeComponent},
+  {path:'bank',component:BankComponent},
   
   // {path:'Edit',component:EmployeeupdateComponent},
   // {path:'Add',component:EmployeeAddComponent},

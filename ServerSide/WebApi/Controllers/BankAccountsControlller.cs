@@ -14,11 +14,11 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [DisableCors]
-    public class BankAccountsControlller : ControllerBase
+    public class BankAccountsController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public BankAccountsControlller(AppDbContext context)
+        public BankAccountsController(AppDbContext context)
         {
             _context = context;
         }

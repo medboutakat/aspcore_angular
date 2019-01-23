@@ -18,28 +18,12 @@ namespace WebApi.Controllers
     {
         private readonly AppDbContext _context;
 
-        public BanksController(AppDbContext context)
+        public AuthController(AppDbContext context)
         {
             _context = context;
         }
 
-
-            // POST: api/Banks
-        [HttpPost]
-        public async Task<IActionResult> GetToken([FromBody] Bank Bank)
-        {
-
-// string securityKey
-//             if (!ModelState.IsValid)
-//             {
-//                 return BadRequest(ModelState);
-//             }
-
-//             _context.Banks.Add(Bank);
-//             await _context.SaveChangesAsync();
-
-//             return CreatedAtAction("GetBanks", new { id = Bank.ID }, Bank);
-        }
+ 
 
     }
 }

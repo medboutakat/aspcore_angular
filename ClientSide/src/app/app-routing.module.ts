@@ -12,6 +12,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { FooterComponent } from './footer/footer.component';
 import { SocialComponent } from './social/social.component';
 import { BankComponent } from './bank/bank.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'tva',component:VatComponent},
   {path:'commande',component:CommandeComponent},
   {path:'bank',component:BankComponent},
+  {path:'home',component:HomeComponent},
   
   // {path:'Edit',component:EmployeeupdateComponent},
   // {path:'Add',component:EmployeeAddComponent},

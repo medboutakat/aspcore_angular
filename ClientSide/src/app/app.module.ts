@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/EmployeesComponent';
@@ -38,6 +38,9 @@ import { ConfigService } from './config.service';
 import { NavmenuComponent } from './navmenu/navmenu.component';
 import { BankComponent } from './bank/bank.component';
 import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { ChartComponent } from './chart/chart.component';
+import { SignalRService } from './DataService/signal-r.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +68,9 @@ import { HomeComponent } from './home/home.component';
     NavigationComponent,
     NavmenuComponent,
     BankComponent,
-    HomeComponent
+    HomeComponent,
+    ContactComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +78,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ChartsModule,
   ],
   providers: [
     EmployeeDataService,
@@ -81,6 +87,7 @@ import { HomeComponent } from './home/home.component';
     IDataService,
     RoutegaurdService,  
     ConfigService,
+    SignalRService,
 ],
   bootstrap: [AppComponent]
 })

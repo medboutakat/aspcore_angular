@@ -14,7 +14,7 @@
 <div *ngIf="group">
   <div class="glass" *ngFor="let glass of group.glasses">
       <div class="beer-container">
-          <img src="/images/glass.png" />
+          <!-- <img src="/images/glass.png" /> -->
           <div class="beer" [style.height]="glass.value+'%'"></div>
           <img [src]="getGravatarByEmail(glass.email)" alt="#" width="44" height="44" class="gravatar">
       </div>

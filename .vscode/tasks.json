@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Angular7Demo/Angular6DemoServices/Angular7DemoServices.csproj"
+                "${workspaceFolder}/ServerSide/WebApi/WebApi.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

@@ -8,4 +8,6 @@ DEMO FOR FREE
 
 dotnet add package Swashbuckle.AspNetCore -s https://api.nuget.org/v3/index.json
 
-http://localhost:42333/swagger/index.html 
+
+http://localhost:42333/swagger/index.html  
+

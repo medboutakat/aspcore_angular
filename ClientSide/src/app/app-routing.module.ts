@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SocialComponent } from './social/social.component';
 import { BankComponent } from './bank/bank.component';
 import { HomeComponent } from './home/home.component';
+import { ChartComponent } from './chart/chart.component';
 
 const routes: Routes = [
 
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:'commande',component:CommandeComponent},
   {path:'bank',component:BankComponent},
   {path:'home',component:HomeComponent},
-  
+  {path:'contact',component:HomeComponent},
+  {path:'chart',component:ChartComponent},
   // {path:'Edit',component:EmployeeupdateComponent},
   // {path:'Add',component:EmployeeAddComponent},
   // {path:'Home',component:AngularCRUDComponent}

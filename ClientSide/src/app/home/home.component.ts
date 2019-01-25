@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'; 
 import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
 import { md5 } from 'src/Others/md5';
+import * as signalR from '@aspnet/signalr';
  
 @Component({
   selector: 'app-home',
@@ -17,16 +18,22 @@ export class HomeComponent implements OnInit {
 
 
     ngOnInit() {
-      
-    let builder = new HubConnectionBuilder();
-    
-    // as per setup in the startup.cs
-    this._hubConnection = builder.withUrl('/drinking').build();
-      // this._hubConnection = new HubConnection('/drinking'); 
-      
+      var hubEndpoint='http://localhost:42333/drinking'; 
+    this._hubConnection = new signalR.HubConnectionBuilder() 
+                              .withUrl(hubEndpoint, {  
+                                accessTokenFactory: () => 'eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsiQWRtaW5pc3RyYXRvciIsIlJlYWRlciJdLCJPdXJfQ3VzdG9tX0NsYWltIjoiT3VyIGN1c3RvbSB2YWx1ZSIsIklkIjoiMTEwIiwiZXhwIjoxNTQ4NTIwNDQzLCJpc3MiOiJzbWVzay5pbiIsImF1ZCI6InJlYWRlcnMifQ.CdfAa7WcuXkyjhZSHW71uWrM2pU9SfilLBcODAEpmoM',  
+                                skipNegotiation: true,
+                                transport: signalR.HttpTransportType.WebSockets 
+                               })
+                               .configureLogging(signalR.LogLevel.Information)
+                               .build(); 
+
+                             
         this._hubConnection.on('Group', (data: any) => {
             this.group = data;
-        });
+        });      
+        
+         
 
         this._hubConnection.start()
             .then(() => {

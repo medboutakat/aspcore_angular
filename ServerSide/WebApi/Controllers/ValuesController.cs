@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using WebApi;
 namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Administrator")]
     public class ValuesController : ControllerBase
     {
 

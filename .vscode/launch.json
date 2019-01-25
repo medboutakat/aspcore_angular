@@ -10,7 +10,7 @@
            "request": "launch",
            "name": "Launch Chrome",
            "url": "http://localhost:2400",
-           "webRoot": "${workspaceFolder}/Angular7CRUD"
+           "webRoot": "${workspaceFolder}/ClientSide"
        },
         {
             "name": ".NET Core Launch (web)",
@@ -18,9 +18,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Angular7Demo/Angular6DemoServices/bin/Debug/netcoreapp2.1/Angular7DemoServices.dll",
+            "program": "${workspaceFolder}/ServerSide/WebApi/bin/Debug/netcoreapp2.1/WebApi.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Angular7Demo/Angular6DemoServices",
+            "cwd": "${workspaceFolder}/ServerSide/WebApi",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApi.Hubs
-{
+{  
+    [Authorize(Roles = "Administrator")]
     public class DrinKingHub:Hub
     { 
         private static List<DrinkingGroup> _groups = new List<DrinkingGroup>();
@@ -55,6 +57,7 @@ namespace WebApi.Hubs
 
         public void Drink()
         {
+              
             var group = _groups.FirstOrDefault(g => !g.HasFinished && g.HasStarted && g.Glasses.Any(gl => gl.ConnectionId == Context.ConnectionId));
             if (group != null)
             {

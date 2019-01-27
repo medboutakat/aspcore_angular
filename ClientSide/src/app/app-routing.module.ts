@@ -14,6 +14,8 @@ import { SocialComponent } from './social/social.component';
 import { BankComponent } from './bank/bank.component';
 import { HomeComponent } from './home/home.component';
 import { ChartComponent } from './chart/chart.component';
+import { MapsComponent } from './maps/maps.component';
+import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
 
 const routes: Routes = [
 
@@ -29,6 +31,10 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'contact',component:HomeComponent},
   {path:'chart',component:ChartComponent},
+  {path:'maps',component:MapsComponent},
+  {path:'upload',component:UploadfilesComponent},
+
+  
   // {path:'Edit',component:EmployeeupdateComponent},
   // {path:'Add',component:EmployeeAddComponent},
   // {path:'Home',component:AngularCRUDComponent}

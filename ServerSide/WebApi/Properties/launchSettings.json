@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Angular6DemoServices": {
+    "ServerSide": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",

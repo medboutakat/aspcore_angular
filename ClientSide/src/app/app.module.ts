@@ -41,6 +41,8 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ChartComponent } from './chart/chart.component';
 import { SignalRService } from './DataService/signal-r.service';
+import { MapsComponent } from './maps/maps.component';
+import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +72,9 @@ import { SignalRService } from './DataService/signal-r.service';
     BankComponent,
     HomeComponent,
     ContactComponent,
-    ChartComponent
+    ChartComponent,
+    MapsComponent,
+    UploadfilesComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +91,7 @@ import { SignalRService } from './DataService/signal-r.service';
     IDataService,
     RoutegaurdService,  
     ConfigService,
-    SignalRService,
+    SignalRService, 
 ],
   bootstrap: [AppComponent]
 })

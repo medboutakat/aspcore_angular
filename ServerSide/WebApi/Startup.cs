@@ -125,7 +125,7 @@ namespace WebApi
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v2/swagger.json", "My API V1");
             });
             app.UseMvc();
                      
@@ -138,6 +138,7 @@ namespace WebApi
             {
                 routes.MapHub<DrinKingHub>("/drinking");
                 routes.MapHub<ChartHub>("/chart");
+                routes.MapHub<DeviceHub>("/device");
             });
             app.UseMvc();            
         }   

@@ -20,6 +20,7 @@ export class BankDataService {
   Get() {
     return this.http.get<Bank[]>(ROOT_URL+"Banks");
   }
+  
   Add(obj: Bank) {
     const headers = new HttpHeaders().set('content-type', 'application/json');
   
@@ -41,8 +42,8 @@ export class BankDataService {
     }
     
     return this.http.put<Bank>(this.fullURLS+obj.id, body, { headers, params })
-
   }
+  
   Delete(obj: Bank) {
     const params = new HttpParams().set('ID', obj.id);
     const headers = new HttpHeaders().set('content-type', 'application/json');

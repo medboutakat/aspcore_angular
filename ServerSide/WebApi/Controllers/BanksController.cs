@@ -26,7 +26,7 @@ namespace WebApi.Controllers
         // GET: api/Banks
         [HttpGet]
         public IEnumerable<Bank> GetBanks()
-        { 
+        {
            return _context.Banks;
         }
 

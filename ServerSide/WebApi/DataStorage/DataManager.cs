@@ -16,8 +16,7 @@ namespace WebApi.DataStorage
                 new Chart { Data = new List<int> { r.Next(1, 40) }, Label = "Data3" },
                 new Chart { Data = new List<int> { r.Next(1, 40) }, Label = "Data4" }
             };
-        }
-
+        } 
         public static List<Chart> GetDeviceData()
         {
             var r = new Random();
@@ -31,5 +30,3 @@ namespace WebApi.DataStorage
         }
     }
 }
-
-

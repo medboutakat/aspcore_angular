@@ -43,7 +43,7 @@ import { ChartComponent } from './chart/chart.component';
 import { SignalRService } from './DataService/signal-r.service';
 import { MapsComponent } from './maps/maps.component';
 import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
-import { StatutComponent } from './statut/statut.component';
+import { StatutComponent } from './statut/statut.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,7 +76,7 @@ import { StatutComponent } from './statut/statut.component';
     ChartComponent,
     MapsComponent,
     UploadfilesComponent,
-    StatutComponent
+    StatutComponent, 
   ],
   imports: [
     BrowserModule,

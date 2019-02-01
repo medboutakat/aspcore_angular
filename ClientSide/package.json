@@ -1,4 +1,6 @@
 {
+
+    "@angular/cli": "^7.2.3",
     "name": "angular7-crud",
     "version": "0.0.0",
     "scripts": {
@@ -50,4 +52,4 @@
       "typescript": "~3.1.1"
     }
   }
-  
+}

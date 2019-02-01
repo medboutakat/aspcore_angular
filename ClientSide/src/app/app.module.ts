@@ -43,7 +43,9 @@ import { ChartComponent } from './chart/chart.component';
 import { SignalRService } from './DataService/signal-r.service';
 import { MapsComponent } from './maps/maps.component';
 import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
-import { StatutComponent } from './statut/statut.component'; 
+import { StatutComponent } from './statut/statut.component';
+import { TripComponent } from './trip/trip.component';  
+import { AgGridModule } from 'ag-grid-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,15 +78,18 @@ import { StatutComponent } from './statut/statut.component';
     ChartComponent,
     MapsComponent,
     UploadfilesComponent,
-    StatutComponent, 
+    StatutComponent,
+    TripComponent, 
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
+    AgGridModule.withComponents([]),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ChartsModule,
+    ChartsModule, 
+    
   ],
   providers: [
     EmployeeDataService,

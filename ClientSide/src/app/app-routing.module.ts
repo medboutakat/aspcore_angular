@@ -16,7 +16,8 @@ import { HomeComponent } from './home/home.component';
 import { ChartComponent } from './chart/chart.component';
 import { MapsComponent } from './maps/maps.component';
 import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
-import { StatutComponent } from './statut/statut.component';
+import { StatutComponent } from './statut/statut.component'; 
+import { TripComponent } from './trip/trip.component';
 
 const routes: Routes = [
 
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path:'maps',component:MapsComponent},
   {path:'upload',component:UploadfilesComponent},
   {path:'statut',component:StatutComponent},
+  {path:'trip',component:TripComponent},
 
   
   // {path:'Edit',component:EmployeeupdateComponent},

@@ -46,6 +46,7 @@ import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
 import { StatutComponent } from './statut/statut.component';
 import { TripComponent } from './trip/trip.component';  
 import { AgGridModule } from 'ag-grid-angular';
+import { StockModule } from './stock/stock.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -99,6 +100,7 @@ import { AgGridModule } from 'ag-grid-angular';
     RoutegaurdService,  
     ConfigService,
     SignalRService, 
+    StockModule,
 ],
   bootstrap: [AppComponent]
 })

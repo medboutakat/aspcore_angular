@@ -17,7 +17,8 @@ import { ChartComponent } from './chart/chart.component';
 import { MapsComponent } from './maps/maps.component';
 import { UploadfilesComponent } from './uploadfiles/uploadfiles.component';
 import { StatutComponent } from './statut/statut.component'; 
-import { TripComponent } from './trip/trip.component';
+import { TripComponent } from './trip/trip.component'; 
+import { ProductComponent } from './stock/product/product.component';
 
 const routes: Routes = [
 
@@ -37,8 +38,17 @@ const routes: Routes = [
   {path:'upload',component:UploadfilesComponent},
   {path:'statut',component:StatutComponent},
   {path:'trip',component:TripComponent},
-
-  
+    // {
+    // path: 'stock', component: ProductComponent,
+    //   children: [{
+    //     path: 'legacy',
+    //     redirectTo: 'user/'
+    //   }, {
+    //     path: 'user/:name',
+    //     component: ProductComponent
+    //   }]
+    //   },
+    { path: 'stock', loadChildren: './stock/stock.module#StockModule' }
   // {path:'Edit',component:EmployeeupdateComponent},
   // {path:'Add',component:EmployeeAddComponent},
   // {path:'Home',component:AngularCRUDComponent}

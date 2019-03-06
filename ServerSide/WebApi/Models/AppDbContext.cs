@@ -31,6 +31,7 @@ namespace WebApi.Models
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategorie> ProductCategories { get; set; }
         public DbSet<Statut> Statuts { get; set; }
+        public DbSet<StoreProduct> StoreProducts { get; set; }
            
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
